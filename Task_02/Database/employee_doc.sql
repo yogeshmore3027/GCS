@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2023 at 06:46 PM
+-- Generation Time: Jan 26, 2023 at 07:27 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,46 +24,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
+-- Table structure for table `employee_doc`
 --
 
-CREATE TABLE `register` (
-  `u_id` int(11) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL,
-  `fname` varchar(250) NOT NULL,
-  `lname` varchar(250) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `country` varchar(250) NOT NULL,
-  `datetime` datetime NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `employee_doc` (
+  `adhar_id` int(11) NOT NULL,
+  `aadharCard` varchar(50) NOT NULL,
+  `aadharCardfile` varchar(500) NOT NULL,
+  `crtTime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `register`
+-- Dumping data for table `employee_doc`
 --
 
-INSERT INTO `register` (`u_id`, `email`, `password`, `fname`, `lname`, `gender`, `country`, `datetime`) VALUES
-(1, 'yogeshmore3027@gmail.com', 'admin', 'admin', 'demo', 'M', 'India', '2023-01-22 20:12:59');
+INSERT INTO `employee_doc` (`adhar_id`, `aadharCard`, `aadharCardfile`, `crtTime`) VALUES
+(1, '098765432112', 'image/adhar.jpg', '2023-01-26 11:36:34'),
+(2, '098765432112', 'image/adhar.jpg', '2023-01-26 11:42:42');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `register`
+-- Indexes for table `employee_doc`
 --
-ALTER TABLE `register`
-  ADD PRIMARY KEY (`u_id`);
+ALTER TABLE `employee_doc`
+  ADD PRIMARY KEY (`adhar_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `register`
+-- AUTO_INCREMENT for table `employee_doc`
 --
-ALTER TABLE `register`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `employee_doc`
+  MODIFY `adhar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
